@@ -8,7 +8,6 @@ mongo_client = pymongo.MongoClient("mongodb://localhost:27017/")
 db = mongo_client["crawler_db"]
 pages_collection = db["pages"]
 
-# Define the base URL and the target URL
 base_url = "https://www.cpp.edu/sci/computer-science/"
 target_url = "https://www.cpp.edu/sci/computer-science/faculty-and-staff/permanent-faculty.shtml"
 
@@ -34,7 +33,6 @@ def parse(html, base_url):
         yield absolute_url
 
 def clear_frontier(frontier):
-    # Clear the frontier (for the sake of this example, just empty the list)
     frontier.clear()
 
 class Frontier:
